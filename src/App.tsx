@@ -7,20 +7,10 @@ import { useMemoryGame } from './hooks/useMemoryGame';
 import { DIFFICULTY_LEVELS, type DifficultyLevel } from './schemas/validation';
 import './App.css';
 
-// ==================== ¿CÓMO FUNCIONA LA APP? ====================
-// 1. Usuario elige dificultad (Instructions)
-// 2. Ve objetos 3D por N segundos (Scene3D + countdown)
-// 3. Objetos desaparecen, hace clic en cuadrícula (MemoryGrid)
-// 4. Ve resultados (ResultsScreen)
-
 function App() {
-  // Estado de dificultad seleccionada
   const [difficulty, setDifficulty] = useState<DifficultyLevel>('easy');
   
-  // Hook del juego con la configuración actual
   const game = useMemoryGame(DIFFICULTY_LEVELS[difficulty]);
-
-  // ==================== HANDLERS ====================
 
   const handleStart = () => {
     game.startGame();
@@ -34,13 +24,10 @@ function App() {
     setDifficulty(newDifficulty);
   };
 
-  // ==================== RENDER ====================
-
   return (
     <div className="app">
       <div className="app-container">
         
-        {/* ===== FASE: INSTRUCCIONES ===== */}
         {game.gamePhase === 'instructions' && (
           <Instructions
             selectedDifficulty={difficulty}
@@ -49,7 +36,6 @@ function App() {
           />
         )}
 
-        {/* ===== FASE: MEMORIZACIÓN ===== */}
         {game.gamePhase === 'memorizing' && (
           <div className="game-phase memorizing">
             <div className="phase-header">
@@ -74,7 +60,6 @@ function App() {
           </div>
         )}
 
-        {/* ===== FASE: RECUERDO ===== */}
         {game.gamePhase === 'recalling' && (
           <div className="game-phase recalling">
             <div className="phase-header">
@@ -107,7 +92,6 @@ function App() {
           </div>
         )}
 
-        {/* ===== FASE: RESULTADOS ===== */}
         {game.gamePhase === 'finished' && game.results && (
           <ResultsScreen
             results={game.results}

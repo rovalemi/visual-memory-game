@@ -1,11 +1,6 @@
 import React from 'react';
 import type { MemoryGameResults } from '../schemas/validation';
 
-// ==================== ¿QUÉ HACE ESTE COMPONENTE? ====================
-// Muestra las estadísticas finales del juego
-// Accuracy, tiempo promedio, aciertos, errores
-// Botones para jugar de nuevo o volver al menú
-
 interface ResultsScreenProps {
   results: MemoryGameResults;
   onPlayAgain: () => void;
@@ -18,9 +13,6 @@ export const ResultsScreen: React.FC<ResultsScreenProps> = ({
   onBackToMenu,
 }) => {
   
-  /**
-   * Determina el mensaje según la precisión
-   */
   const getPerformanceMessage = (): { emoji: string; message: string; color: string } => {
     const { accuracy } = results;
     
@@ -66,7 +58,6 @@ export const ResultsScreen: React.FC<ResultsScreenProps> = ({
       </div>
 
       <div className="results-grid">
-        {/* Precisión */}
         <div className="result-card primary">
           <div className="result-icon">🎯</div>
           <div className="result-content">
@@ -75,7 +66,6 @@ export const ResultsScreen: React.FC<ResultsScreenProps> = ({
           </div>
         </div>
 
-        {/* Aciertos */}
         <div className="result-card success">
           <div className="result-icon">✓</div>
           <div className="result-content">
@@ -86,7 +76,6 @@ export const ResultsScreen: React.FC<ResultsScreenProps> = ({
           </div>
         </div>
 
-        {/* Errores */}
         <div className="result-card error">
           <div className="result-icon">✗</div>
           <div className="result-content">
@@ -95,7 +84,6 @@ export const ResultsScreen: React.FC<ResultsScreenProps> = ({
           </div>
         </div>
 
-        {/* Objetos perdidos */}
         <div className="result-card warning">
           <div className="result-icon">❓</div>
           <div className="result-content">
@@ -104,7 +92,6 @@ export const ResultsScreen: React.FC<ResultsScreenProps> = ({
           </div>
         </div>
 
-        {/* Tiempo promedio */}
         <div className="result-card info">
           <div className="result-icon">⏱️</div>
           <div className="result-content">
@@ -116,7 +103,6 @@ export const ResultsScreen: React.FC<ResultsScreenProps> = ({
         </div>
       </div>
 
-      {/* Análisis detallado */}
       <div className="results-analysis">
         <h3>Análisis del Rendimiento</h3>
         <div className="analysis-items">
@@ -155,7 +141,6 @@ export const ResultsScreen: React.FC<ResultsScreenProps> = ({
         </div>
       </div>
 
-      {/* Botones de acción */}
       <div className="results-actions">
         <button className="button-secondary" onClick={onBackToMenu}>
           ← Volver al menú

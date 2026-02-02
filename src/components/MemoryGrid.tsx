@@ -2,11 +2,6 @@ import React from 'react';
 import type { Position, UserClick } from '../schemas/validation';
 import { positionsEqual } from '../schemas/validation';
 
-// ==================== ¿QUÉ HACE ESTE COMPONENTE? ====================
-// Muestra una cuadrícula de celdas clicables
-// Resalta las celdas donde el usuario ya hizo clic
-// Muestra feedback visual (verde si acertó, rojo si falló)
-
 interface MemoryGridProps {
   gridSize: number;
   userClicks: UserClick[];
@@ -21,9 +16,6 @@ export const MemoryGrid: React.FC<MemoryGridProps> = ({
   disabled = false,
 }) => {
   
-  /**
-   * Verifica si una celda ya fue clickeada
-   */
   const getCellStatus = (row: number, col: number): 'unclicked' | 'correct' | 'incorrect' => {
     const click = userClicks.find(click => 
       positionsEqual(click.position, { row, col })
@@ -33,9 +25,6 @@ export const MemoryGrid: React.FC<MemoryGridProps> = ({
     return click.correct ? 'correct' : 'incorrect';
   };
 
-  /**
-   * Genera las filas de la cuadrícula
-   */
   const renderGrid = () => {
     const rows = [];
     
