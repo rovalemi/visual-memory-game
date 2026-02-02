@@ -1,6 +1,4 @@
-/* ==================== VARIABLES CSS ==================== */
 :root {
-  /* Colores principales */
   --primary: #6366f1;
   --primary-dark: #4f46e5;
   --secondary: #8b5cf6;
@@ -9,24 +7,20 @@
   --error: #ef4444;
   --info: #3b82f6;
   
-  /* Grises */
   --bg-dark: #0f172a;
   --bg-medium: #1e293b;
   --bg-light: #334155;
   --text-primary: #f1f5f9;
   --text-secondary: #cbd5e1;
   
-  /* Sombras */
   --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
   --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
   --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1);
   --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1);
   
-  /* Transiciones */
   --transition: all 0.3s ease;
 }
 
-/* ==================== RESET Y BASE ==================== */
 * {
   margin: 0;
   padding: 0;
@@ -39,6 +33,7 @@ body {
   color: var(--text-primary);
   min-height: 100vh;
   line-height: 1.6;
+  justify-content: center;
 }
 
 .app {
@@ -54,7 +49,6 @@ body {
   max-width: 1200px;
 }
 
-/* ==================== INSTRUCCIONES ==================== */
 .instructions-container {
   background: var(--bg-medium);
   border-radius: 1.5rem;
@@ -130,7 +124,6 @@ body {
   line-height: 1.6;
 }
 
-/* ===== SELECTOR DE DIFICULTAD ===== */
 .difficulty-selector {
   text-align: center;
 }
@@ -184,7 +177,6 @@ body {
   color: white;
 }
 
-/* ===== BOTONES ===== */
 .start-button,
 .button-primary,
 .button-secondary,
@@ -230,7 +222,6 @@ body {
   cursor: not-allowed;
 }
 
-/* ==================== FASES DEL JUEGO ==================== */
 .game-phase {
   background: var(--bg-medium);
   border-radius: 1.5rem;
@@ -252,7 +243,6 @@ body {
   color: var(--text-secondary);
 }
 
-/* ===== COUNTDOWN TIMER ===== */
 .countdown-timer {
   display: inline-flex;
   align-items: center;
@@ -277,7 +267,6 @@ body {
   border-radius: 0.75rem;
 }
 
-/* ==================== MEMORY GRID ==================== */
 .memory-grid-container {
   display: flex;
   flex-direction: column;
@@ -349,7 +338,6 @@ body {
   }
 }
 
-/* ===== ESTADÍSTICAS DE LA GRID ===== */
 .grid-stats {
   display: flex;
   gap: 2rem;
@@ -383,7 +371,6 @@ body {
   color: var(--error);
 }
 
-/* ===== ACCIONES DE FASE ===== */
 .phase-actions {
   display: flex;
   flex-direction: column;
@@ -397,7 +384,6 @@ body {
   font-size: 0.95rem;
 }
 
-/* ==================== RESULTADOS ==================== */
 .results-container {
   background: var(--bg-medium);
   border-radius: 1.5rem;
@@ -429,7 +415,6 @@ body {
   font-weight: 600;
 }
 
-/* ===== GRID DE RESULTADOS ===== */
 .results-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -485,7 +470,6 @@ body {
   font-weight: bold;
 }
 
-/* ===== ANÁLISIS ===== */
 .results-analysis {
   background: var(--bg-light);
   padding: 2rem;
@@ -521,14 +505,12 @@ body {
   font-weight: 600;
 }
 
-/* ===== ACCIONES DE RESULTADOS ===== */
 .results-actions {
   display: flex;
   gap: 1rem;
   justify-content: center;
 }
 
-/* ==================== RESPONSIVE ==================== */
 @media (max-width: 768px) {
   .app {
     padding: 1rem;

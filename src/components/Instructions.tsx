@@ -2,11 +2,6 @@ import React from 'react';
 import type { DifficultyLevel } from '../schemas/validation';
 import { DIFFICULTY_LEVELS } from '../schemas/validation';
 
-// ==================== ¿QUÉ HACE ESTE COMPONENTE? ====================
-// Muestra las instrucciones del juego
-// Permite seleccionar el nivel de dificultad
-// Tiene el botón para iniciar el juego
-
 interface InstructionsProps {
   selectedDifficulty: DifficultyLevel;
   onDifficultyChange: (level: DifficultyLevel) => void;
